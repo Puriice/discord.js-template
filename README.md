@@ -8,7 +8,6 @@ This template is a starting point for a bot that uses the Discord.js library. It
 </p>
 
 ## Getting Start :
-<hr>
 <ol>
 	<li>[x] Use this template and clone to your working directory.</li>
 	<li>[ ] Create <b>.env</b> file and add <b>CLIENT_ID</b>, <b>GUILD_ID</b> and <b>TOKEN</b> to your environment variables.</li>
@@ -104,5 +103,4 @@ we have a tool to help you!</p>
 </table>
 
 ## Contract
-<hr>
 <p style="text-indent:1rem"> Purinutt Amartayavis - <a href="mailto:work@purinutt.com">work@purinutt.com</a></p>
