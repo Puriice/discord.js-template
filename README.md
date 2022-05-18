@@ -46,7 +46,6 @@ we have a tool to help you!</p>
     <th>Type</th>
     <th>Optional</th>
     <th>Description</th>
-    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -55,14 +54,12 @@ we have a tool to help you!</p>
     <td>String</td>
     <td>true</td>
     <td>The name of command.</td>
-    <td></td>
   </tr>
   <tr>
     <td>description</td>
     <td>String</td>
     <td>true</td>
     <td>The description of command.</td>
-    <td></td>
   </tr>
 </tbody>
 </table>
@@ -83,7 +80,6 @@ we have a tool to help you!</p>
     <th>Type</th>
     <th>Optional</th>
     <th>Description</th>
-    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -92,20 +88,17 @@ we have a tool to help you!</p>
     <td>client / guild</td>
     <td>false</td>
     <td>Where is the event supposed to happen.</td>
-    <td></td>
   </tr>
   <tr>
 	<td>name</td>
 	<td>String</td>
 	<td>true</td>
 	<td>The name of event.</td>
-	<td></td>
   <tr>
     <td>once</td>
     <td>Boolean</td>
     <td>true</td>
     <td>If event should be trigger only once</td>
-    <td></td>
   </tr>
 </tbody>
 </table>
