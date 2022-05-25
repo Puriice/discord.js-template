@@ -13,7 +13,7 @@ if (!CLIENT_ID) throw new Error('CLIENT_ID is not defined. Please specify it in 
 if (!GUILD_ID) throw new Error('GUILD_ID is not defined. Please specify it in .env');
 if (!TOKEN) throw new Error('TOKEN is not defined. Please specify it in .env');
 
-const commandsPath = path.join(path.dirname(__dirname), 'commands');
+const commandsPath = path.join(path.dirname(__dirname), 'src', 'commands');
 const commands = [];
 
 fs.readdirSync(commandsPath).filter(file => file.endsWith('.js')).forEach(file => {
