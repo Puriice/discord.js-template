@@ -33,7 +33,7 @@ module.exports = {
 	},
 };`;
 
-	const commandsPath = path.join(path.dirname(__dirname), 'commands');
+	const commandsPath = path.resolve(__dirname, '..', 'src', 'commands');
 
 	writeFile(path.join(commandsPath, `${args[1] ? args[1].toLowerCase() : 'command-name'}.js`), commands);
 
@@ -48,7 +48,7 @@ module.exports = {
 	console.log('generating events...');
 
 	const events = `module.exports = {
-	name: '${args[2] ? args[2].toLowerCase() : 'event- name'}',
+	name: '${args[2] ? args[2].toLowerCase() : 'event-name'}',
 	once: ${Boolean(args[3])},
 	execute() {
 		/* code here */
@@ -56,7 +56,7 @@ module.exports = {
 	},
 };`;
 
-	const eventsPath = path.join(path.dirname(__dirname), 'events', args[1]);
+	const eventsPath = path.resolve(__dirname, '..', 'src', 'events', args[1]);
 
 	writeFile(path.join(eventsPath, `${args[2] ? args[2].toLowerCase() : 'event-name'}.js`), events);
 }

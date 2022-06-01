@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const eventsPath = path.join(path.dirname(__dirname), 'events');
+const eventsPath = path.resolve(__dirname, '..', 'events');
 
 const dirs = fs.readdirSync(eventsPath);
 

@@ -2,7 +2,7 @@ const { Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
-const commandsPath = path.join(path.dirname(__dirname), 'commands');
+const commandsPath = path.resolve(__dirname, '..', 'commands');
 
 module.exports = (client) => {
 	console.log('Loading commands...');

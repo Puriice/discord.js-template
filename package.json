@@ -1,9 +1,9 @@
 {
 	"name": "discord-template",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "./src/index.js",
 	"author": "Purinutt Amartayavis <ice.ice5335@gmail.com>",
-	"license": "All rights reserved",
+	"license": "MIT",
 	"dependencies": {
 		"@discordjs/builders": "^0.13.0",
 		"@discordjs/rest": "^0.4.1",
@@ -14,7 +14,7 @@
 	"scripts": {
 		"start": "node ./script/start.js production",
 		"dev": "nodemon ./script/start.js development",
-		"deploy": "node ./script/development-deploy.js",
+		"deploy": "node ./script/deploy.js",
 		"gen": "node ./script/generate.js"
 	},
 	"devDependencies": {
