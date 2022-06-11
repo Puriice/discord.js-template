@@ -25,7 +25,7 @@ if (args[0].toLowerCase() === 'commands' || args[0].toLowerCase() === 'command')
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('${args[1] ? args[1].toLowerCase() : 'command-name'}')
+		.setName('${args[1] ? args[1] : 'command-name'}')
 		.setDescription('${args[2] ? args[2] : 'command-description'}'),
 	async execute(interaction) {
 		/* code here */
@@ -35,7 +35,7 @@ module.exports = {
 
 	const commandsPath = path.resolve(__dirname, '..', 'src', 'commands');
 
-	writeFile(path.join(commandsPath, `${args[1] ? args[1].toLowerCase() : 'command-name'}.js`), commands);
+	writeFile(path.join(commandsPath, `${args[1] ? args[1] : 'command-name'}.js`), commands);
 
 	/*
 	*  npm run gen events [type: client | guild] [event-name?] [once?]
@@ -48,7 +48,7 @@ module.exports = {
 	console.log('generating events...');
 
 	const events = `module.exports = {
-	name: '${args[2] ? args[2].toLowerCase() : 'event-name'}',
+	name: '${args[2] ? args[2] : 'event-name'}',
 	once: ${Boolean(args[3])},
 	execute() {
 		/* code here */
@@ -58,5 +58,5 @@ module.exports = {
 
 	const eventsPath = path.resolve(__dirname, '..', 'src', 'events', args[1]);
 
-	writeFile(path.join(eventsPath, `${args[2] ? args[2].toLowerCase() : 'event-name'}.js`), events);
+	writeFile(path.join(eventsPath, `${args[2] ? args[2] : 'event-name'}.js`), events);
 }
