@@ -4,7 +4,7 @@ module.exports = {
 	async execute(interaction) {
 		if (!interaction.isContextMenu()) return;
 
-		const menu = interaction.client.menus.get(interaction.commandName);
+		const menu = interaction.client.context.get(interaction.commandName);
 
 		if (!menu) throw new Error('No such menu: ' + interaction.commandName);
 

@@ -12,7 +12,7 @@ if (!CLIENT_ID) throw new Error('CLIENT_ID is not defined. Please specify it in 
 if (!TOKEN) throw new Error('TOKEN is not defined. Please specify it in .env');
 
 const commandsPath = path.resolve(__dirname, '..', 'src', 'commands');
-const menusPath = path.resolve(__dirname, '..', 'src', 'menus');
+const menusPath = path.resolve(__dirname, '..', 'src', 'context');
 const commands = [];
 
 function registerCommands(registerPath) {
