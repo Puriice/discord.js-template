@@ -10,10 +10,11 @@ module.exports = (client) => {
 
 	try {
 		dirs.forEach((dir) => {
-			const events = fs.readdirSync(path.join(eventsPath, dir));
+			const events = fs.readdirSync(path.join(eventsPath, dir)).filter(file => file.endsWith('.js'));
 
 			for (let i = 0; i < events.length; i += 1) {
 				const file = events[i];
+
 
 				const event = require(path.join(eventsPath, dir, file));
 
