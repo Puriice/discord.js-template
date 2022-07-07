@@ -8,10 +8,15 @@ module.exports = (client) => {
 	console.log('Loading buttons...');
 	client.buttons = new Collection();
 
-	fs.readdirSync(buttonsPath).filter(file => file.endsWith('.js')).forEach(file => {
-		const buttons = require(path.join(buttonsPath, file));
+	try {
+		fs.readdirSync(buttonsPath).filter(file => file.endsWith('.js')).forEach(file => {
+			const buttons = require(path.join(buttonsPath, file));
 
-		client.buttons.set(buttons.button.customId, buttons);
-	});
+			client.buttons.set(buttons.button.customId, buttons);
+		});
+	} catch (error) {
+		console.error(error);
+	}
+
 	console.log('Buttons loaded!');
 };

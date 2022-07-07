@@ -18,10 +18,14 @@ const menusPath = path.resolve(__dirname, '..', 'src', 'context');
 const commands = [];
 
 function registerCommands(registerPath) {
-	fs.readdirSync(registerPath).filter(file => file.endsWith('.js')).forEach(file => {
-		const command = require(path.join(registerPath, file));
-		commands.push(command.data);
-	});
+	try {
+		fs.readdirSync(registerPath).filter(file => file.endsWith('.js')).forEach(file => {
+			const command = require(path.join(registerPath, file));
+			commands.push(command.data);
+		});
+	} catch (err) {
+		console.log(err);
+	}
 }
 
 registerCommands(commandsPath);

@@ -8,10 +8,15 @@ module.exports = (client) => {
 	console.log('Loading modals...');
 	client.modals = new Collection();
 
-	fs.readdirSync(modalsPath).filter(file => file.endsWith('.js')).forEach(file => {
-		const modals = require(path.join(modalsPath, file));
+	try {
+		fs.readdirSync(modalsPath).filter(file => file.endsWith('.js')).forEach(file => {
+			const modals = require(path.join(modalsPath, file));
 
-		client.modals.set(modals.modal.customId, modals);
-	});
+			client.modals.set(modals.modal.customId, modals);
+		});
+	} catch (error) {
+		console.error(error);
+	}
+
 	console.log('modals loaded!');
 };
