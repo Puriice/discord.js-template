@@ -4,15 +4,15 @@ module.exports = {
 	async execute(interaction) {
 		if (!interaction.isContextMenu()) return;
 
-		const menu = interaction.client.context.get(interaction.commandName);
+		const context = interaction.client.context.get(interaction.commandName);
 
-		if (!menu) throw new Error('No such menu: ' + interaction.commandName);
+		if (!context) throw new Error('No such Context Menu: ' + interaction.commandName);
 
 		try {
-			await menu.execute(interaction);
+			await context.execute(interaction);
 		} catch (error) {
 			console.error(error);
-			await interaction.reply({ content: 'There was an error while executing this menu!', ephemeral: true });
+			await interaction.reply({ content: 'There was an error while executing this Context Menu!', ephemeral: true });
 		}
 	},
 };

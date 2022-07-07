@@ -10,9 +10,9 @@ module.exports = (client) => {
 
 	try {
 		fs.readdirSync(buttonsPath).filter(file => file.endsWith('.js')).forEach(file => {
-			const buttons = require(path.join(buttonsPath, file));
+			const button = require(path.join(buttonsPath, file));
 
-			client.buttons.set(buttons.button.customId, buttons);
+			client.buttons.set(button.button.customId, button);
 		});
 	} catch (error) {
 		console.error(error);

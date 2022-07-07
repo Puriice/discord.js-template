@@ -7,10 +7,31 @@ module.exports = {
 		.setDescription('Replies with Pong!'),
 	async execute(interaction) {
 		const { button } = interaction.client.buttons.get('ping');
+		const { menu } = interaction.client.menus.get('ping_menu');
+		// const menu = new MessageSelectMenu()
+		// 	.setCustomId('select')
+		// 	.setPlaceholder('Nothing selected')
+		// 	.addOptions([
+		// 		{
+		// 			label: 'Select me',
+		// 			description: 'This is a description',
+		// 			value: 'first_option',
+		// 		},
+		// 		{
+		// 			label: 'You can select me too',
+		// 			description: 'This is also a description',
+		// 			value: 'second_option',
+		// 		},
+		// 	]);
 
-		const row = new MessageActionRow()
+		const buttonRow = new MessageActionRow()
 			.addComponents(button);
 
-		await interaction.reply({ content: 'Pong! :ping_pong:', components: [row] });
+		const menuRow = new MessageActionRow()
+			.addComponents(menu);
+
+		const row = [buttonRow, menuRow];
+
+		await interaction.reply({ content: 'Pong! :ping_pong:', components: row });
 	},
 };
