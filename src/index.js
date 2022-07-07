@@ -18,4 +18,5 @@ fs.readdirSync(handlersPath).filter(file => file.endsWith('.handler.js')).forEac
 	handler(client);
 });
 
+
 client.login(process.env.TOKEN);

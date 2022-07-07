@@ -12,12 +12,18 @@ if (!CLIENT_ID) throw new Error('CLIENT_ID is not defined. Please specify it in 
 if (!TOKEN) throw new Error('TOKEN is not defined. Please specify it in .env');
 
 const commandsPath = path.resolve(__dirname, '..', 'src', 'commands');
+const menusPath = path.resolve(__dirname, '..', 'src', 'menus');
 const commands = [];
 
-fs.readdirSync(commandsPath).filter(file => file.endsWith('.js')).forEach(file => {
-	const command = require(path.join(commandsPath, file));
-	commands.push(command.data);
-});
+function registerCommands(registerPath) {
+	fs.readdirSync(registerPath).filter(file => file.endsWith('.js')).forEach(file => {
+		const command = require(path.join(registerPath, file));
+		commands.push(command.data);
+	});
+}
+
+registerCommands(commandsPath);
+registerCommands(menusPath);
 
 commands.map(command => command.toJSON());
 
